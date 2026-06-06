@@ -1,0 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Review {
+  id           String    @id @db.VarChar(64)
+  restaurantId String    @map("restaurant_id") @db.VarChar(64)
+  rating       Float
+  text         String    @db.Text
+  authorName   String    @map("author_name") @db.VarChar(30)
+  ownerToken   String?   @map("owner_token") @db.VarChar(128)
+  createdAt    DateTime  @default(now()) @map("created_at")
+  updatedAt    DateTime? @updatedAt @map("updated_at")
+
+  @@index([restaurantId])
+  @@map("reviews")
+}
