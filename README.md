@@ -92,3 +92,4 @@ Vercel 프로젝트 → **Settings → Environment Variables**
 - Push/PR 시 의존성·시크릿 검사: [`.github/workflows/security.yml`](.github/workflows/security.yml)
 - 의존성 자동 업데이트 PR: [`.github/dependabot.yml`](.github/dependabot.yml)
 - API 키는 `.env.local`에만 두고, 저장소에는 [`.env.example`](.env.example)만 올립니다.
+
